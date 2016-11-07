@@ -1086,7 +1086,7 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
                 var circle = new THREE.Mesh( circleGeometry, material );
                 var cx = probe.x;
                 var cy = probe.y;
-                var cz = probe.z === null ? 0 : probe.z;
+                var cz = probe.z === null ? 0 : typeof(probe.z) === 'string' ? parseFloat(probe.z) : probe.z;
                 //console.log("adding circle. ctrx:", ctrx, "ctry:", ctry, "x", cx, "cy", cy);
                 circle.position.set(cx, cy, cz);
                 circleGrp.add( circle );
